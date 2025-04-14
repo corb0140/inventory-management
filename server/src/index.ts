@@ -5,6 +5,9 @@ import cors from "cors";
 import helmet from "helmet";
 import morgan from "morgan";
 
+/* IMPORT ROUTES */
+import dashboardRoutes from "./routes/dashboardRoutes";
+
 /* CONFIGURATION */
 dotenv.config(); // this will setup our env setup so it would work
 const app = express(); // create express app
@@ -17,9 +20,7 @@ app.use(bodyParser.urlencoded({ extended: false })); // parses incoming requests
 app.use(cors()); // allows cross-origin requests
 
 /* ROUTES */
-app.get("/hello", (req, res) => {
-  res.send("Hello World!");
-});
+app.use("/dashboard", dashboardRoutes);
 
 /* SERVER */
 const port = process.env.PORT || 3001;
