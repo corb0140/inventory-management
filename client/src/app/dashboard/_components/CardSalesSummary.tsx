@@ -1,6 +1,8 @@
 import { useGetDashboardMetricsQuery } from "@/lib/state/api";
 import { TrendingUp } from "lucide-react";
 import React, { useState } from "react";
+import Loading from "@/Loading.json";
+import Lottie from "lottie-react";
 import {
   Bar,
   BarChart,
@@ -49,12 +51,16 @@ const CardSalesSummary = () => {
   return (
     <div className="row-span-3 xl:row-span-6 bg-white shadow-md rounded-2xl flex flex-col justify-between">
       {isLoading ? (
-        <div className="m-5">...Loading</div>
+        <div className="flex items-center justify-center h-full">
+          <Lottie animationData={Loading} loop={true} className="w-1/2 h-1/2" />
+        </div>
       ) : (
         <>
           {/* HEADER */}
           <div>
-            <h2 className="text-lg font-semibold mb-2 px-7 pt-5"></h2>
+            <h2 className="text-lg font-semibold mb-2 px-7 pt-5">
+              Sales Summary
+            </h2>
           </div>
 
           {/* BODY */}
@@ -118,6 +124,14 @@ const CardSalesSummary = () => {
                   formatter={(value: number) => [
                     `$${value.toLocaleString("en")}`,
                   ]}
+                  labelFormatter={(label) => {
+                    const date = new Date(label);
+                    return date.toLocaleDateString("en-US", {
+                      month: "long",
+                      day: "numeric",
+                      year: "numeric",
+                    });
+                  }}
                 />
 
                 {/* BAR */}

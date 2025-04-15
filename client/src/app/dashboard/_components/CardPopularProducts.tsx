@@ -2,6 +2,8 @@ import { useGetDashboardMetricsQuery } from "@/lib/state/api";
 import { ShoppingBag } from "lucide-react";
 import React from "react";
 import Rating from "./Rating";
+import Loading from "@/Loading.json";
+import Lottie from "lottie-react";
 
 const CardPopularProducts = () => {
   const { data: dashboardMetrics, isLoading } = useGetDashboardMetricsQuery();
@@ -9,7 +11,9 @@ const CardPopularProducts = () => {
   return (
     <div className="row-span-3 xl:row-span-6 bg-white shadow-md rounded-2xl pb-16">
       {isLoading ? (
-        <div className="m-5">...Loading</div>
+        <div className="flex items-center justify-center h-full">
+          <Lottie animationData={Loading} loop={true} className="w-1/2 h-1/2" />
+        </div>
       ) : (
         <>
           <h3 className="text-lg font-semibold px-7 pt-5 pb-2">
