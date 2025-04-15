@@ -61,12 +61,13 @@ const CardSalesSummary = () => {
             <h2 className="text-lg font-semibold mb-2 px-7 pt-5">
               Sales Summary
             </h2>
+            <hr />
           </div>
 
           {/* BODY */}
           <div>
             {/* BODY HEADER */}
-            <div className="flex justify-between items-center mb-6 px-7">
+            <div className="flex justify-between items-center mb-6 px-7 mt-5">
               <div className="text-lg font-medium">
                 <p className="text-xs text-gray-400">Value</p>
                 <span className="text-2xl font-extrabold">
@@ -148,7 +149,7 @@ const CardSalesSummary = () => {
           {/* FOOTER */}
           <div>
             <hr />
-            <div className="flex justify-between items-center mt-6 text-sm px-7 mb-4">
+            <div className="flex justify-between items-center mt-6 text-sm px-7 mb-4 md:mt-4 xl:mt-2">
               <p>{salesData.length || 0}</p>
               <p className="text-sm">
                 Highest Sales Date: {""}
