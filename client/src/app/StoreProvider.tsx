@@ -18,7 +18,7 @@ import { setupListeners } from "@reduxjs/toolkit/query";
 export default function StoreProvider({
   children,
 }: {
-  children: React.ReactNode;
+  children: React.ReactNode; // ReactNode is a type that represents any node that can be rendered in React
 }) {
   const storeRef = useRef<AppStore>(undefined);
   if (!storeRef.current) {

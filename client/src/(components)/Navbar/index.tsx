@@ -6,7 +6,7 @@ import { Bell, Menu, Moon, Settings, Sun } from "lucide-react";
 import Link from "next/link";
 import React from "react";
 import { useAppDispatch, useAppSelector } from "@/lib/hooks";
-import { setIsDarkMode, setIsSidebarCollapsed } from "@/lib/slices/state";
+import { setIsDarkMode, setIsSidebarCollapsed } from "@/lib/state";
 
 const Navbar = () => {
   const dispatch = useAppDispatch();

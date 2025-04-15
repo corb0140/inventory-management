@@ -1,8 +1,8 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import { combineReducers, configureStore } from "@reduxjs/toolkit";
-import globalReducer from "@/lib/slices/state";
-import { api } from "@/lib/slices/state/api";
+import globalReducer from "@/lib/state";
+import { api } from "@/lib/state/api";
 
 /**
  * Redux Store
@@ -61,8 +61,8 @@ const persistConfig = {
  * @see https://redux-toolkit.js.org/api/createSlice
  */
 const rootReducer = combineReducers({
-  global: globalReducer,
-  [api.reducerPath]: api.reducer,
+  global: globalReducer, // this is the global slice of the state
+  [api.reducerPath]: api.reducer, // this is the reducer for the api slice
 });
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);

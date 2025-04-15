@@ -79,11 +79,10 @@ model ExpenseSummary {
 }
 
 model ExpenseByCategory {
-  expenseByCategoryId String   @id
+  expenseByCategoryId String          @id
   expenseSummaryId    String
   date                DateTime
   category            String
   amount              BigInt
-
-  ExpenseSummary ExpenseSummary? @relation(fields: [expenseSummaryId], references: [expenseSummaryId], onDelete: Cascade)
+  ExpenseSummary      ExpenseSummary? @relation(fields: [expenseSummaryId], references: [expenseSummaryId], onDelete: Cascade)
 }

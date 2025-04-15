@@ -1,7 +1,7 @@
 "use client";
 
 import { useAppDispatch, useAppSelector } from "@/lib/hooks";
-import { setIsSidebarCollapsed } from "@/lib/slices/state";
+import { setIsSidebarCollapsed } from "@/lib/state";
 import {
   Archive,
   CircleDollarSign,
@@ -12,7 +12,7 @@ import {
   User,
 } from "lucide-react";
 import React from "react";
-import { SidebarLink } from "./_components/sidebar-link";
+import { SidebarLink } from "./sidebar-link";
 
 const Sidebar = () => {
   const dispatch = useAppDispatch();

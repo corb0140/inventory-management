@@ -213,8 +213,7 @@ const config = {
     "isCustomOutput": true
   },
   "relativeEnvPaths": {
-    "rootEnvPath": null,
-    "schemaEnvPath": "../../.env"
+    "rootEnvPath": null
   },
   "relativePath": "../../prisma",
   "clientVersion": "6.6.0",
@@ -223,17 +222,16 @@ const config = {
     "db"
   ],
   "activeProvider": "postgresql",
-  "postinstall": false,
   "inlineDatasources": {
     "db": {
       "url": {
         "fromEnvVar": "DATABASE_URL",
-        "value": null
+        "value": "postgresql://postgres:MC1608@localhost:5432/inventorymanagement?schema=public"
       }
     }
   },
-  "inlineSchema": "// This is your Prisma schema file,\n// learn more about it in the docs: https://pris.ly/d/prisma-schema\n\n// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?\n// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init\n\ngenerator client {\n  provider = \"prisma-client-js\"\n  output   = \"../generated/prisma\"\n}\n\ndatasource db {\n  provider = \"postgresql\"\n  url      = env(\"DATABASE_URL\")\n}\n\nmodel Users {\n  userId String @id\n  name   String\n  email  String\n}\n\nmodel Products {\n  productId     String      @id\n  name          String\n  price         Float\n  rating        Float?\n  stockQuantity Int\n  Sales         Sales[]\n  Purchases     Purchases[]\n}\n\nmodel Sales {\n  saleId      String   @id\n  productId   String\n  timestamp   DateTime\n  quantity    Int\n  unitPrice   Float\n  totalAmount Float\n  product     Products @relation(fields: [productId], references: [productId], onDelete: Cascade)\n}\n\nmodel Purchases {\n  purchaseId String   @id\n  productId  String\n  timestamp  DateTime\n  quantity   Int\n  unitCost   Float\n  totalCost  Float\n  product    Products @relation(fields: [productId], references: [productId], onDelete: Cascade)\n}\n\nmodel Expenses {\n  expenseId String   @id\n  category  String\n  amount    Float\n  timestamp DateTime\n}\n\nmodel SalesSummary {\n  salesSummaryId   String   @id\n  totalValue       Float\n  changePercentage Float?\n  date             DateTime\n}\n\nmodel PurchaseSummary {\n  purchaseSummaryId String   @id\n  totalPurchased    Float\n  changePercentage  Float?\n  date              DateTime\n}\n\nmodel ExpenseSummary {\n  expenseSummaryId  String              @id\n  totalExpenses     Float\n  date              DateTime\n  ExpenseByCategory ExpenseByCategory[]\n}\n\nmodel ExpenseByCategory {\n  expenseByCategoryId String   @id\n  expenseSummaryId    String\n  date                DateTime\n  category            String\n  amount              BigInt\n\n  ExpenseSummary ExpenseSummary? @relation(fields: [expenseSummaryId], references: [expenseSummaryId], onDelete: Cascade)\n}\n",
-  "inlineSchemaHash": "e8d7ae54271458a02f03085d1ebcb56ec8a9bb2c8c8054644b0ff2a1db44e91e",
+  "inlineSchema": "// This is your Prisma schema file,\n// learn more about it in the docs: https://pris.ly/d/prisma-schema\n\n// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?\n// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init\n\ngenerator client {\n  provider = \"prisma-client-js\"\n  output   = \"../generated/prisma\"\n}\n\ndatasource db {\n  provider = \"postgresql\"\n  url      = env(\"DATABASE_URL\")\n}\n\nmodel Users {\n  userId String @id\n  name   String\n  email  String\n}\n\nmodel Products {\n  productId     String      @id\n  name          String\n  price         Float\n  rating        Float?\n  stockQuantity Int\n  Sales         Sales[]\n  Purchases     Purchases[]\n}\n\nmodel Sales {\n  saleId      String   @id\n  productId   String\n  timestamp   DateTime\n  quantity    Int\n  unitPrice   Float\n  totalAmount Float\n  product     Products @relation(fields: [productId], references: [productId], onDelete: Cascade)\n}\n\nmodel Purchases {\n  purchaseId String   @id\n  productId  String\n  timestamp  DateTime\n  quantity   Int\n  unitCost   Float\n  totalCost  Float\n  product    Products @relation(fields: [productId], references: [productId], onDelete: Cascade)\n}\n\nmodel Expenses {\n  expenseId String   @id\n  category  String\n  amount    Float\n  timestamp DateTime\n}\n\nmodel SalesSummary {\n  salesSummaryId   String   @id\n  totalValue       Float\n  changePercentage Float?\n  date             DateTime\n}\n\nmodel PurchaseSummary {\n  purchaseSummaryId String   @id\n  totalPurchased    Float\n  changePercentage  Float?\n  date              DateTime\n}\n\nmodel ExpenseSummary {\n  expenseSummaryId  String              @id\n  totalExpenses     Float\n  date              DateTime\n  ExpenseByCategory ExpenseByCategory[]\n}\n\nmodel ExpenseByCategory {\n  expenseByCategoryId String          @id\n  expenseSummaryId    String\n  date                DateTime\n  category            String\n  amount              BigInt\n  ExpenseSummary      ExpenseSummary? @relation(fields: [expenseSummaryId], references: [expenseSummaryId], onDelete: Cascade)\n}\n",
+  "inlineSchemaHash": "61e02b4e7f0748dab2139b15d76382d966a6c2041a750781a1390fa5dcc97fb3",
   "copyEngine": true
 }
 
@@ -242,8 +240,8 @@ const fs = require('fs')
 config.dirname = __dirname
 if (!fs.existsSync(path.join(__dirname, 'schema.prisma'))) {
   const alternativePaths = [
+    "../generated/prisma",
     "generated/prisma",
-    "prisma",
   ]
   
   const alternativePath = alternativePaths.find((altPath) => {
@@ -273,7 +271,7 @@ Object.assign(exports, Prisma)
 
 // file annotations for bundling tools to include these files
 path.join(__dirname, "libquery_engine-darwin-arm64.dylib.node");
-path.join(process.cwd(), "generated/prisma/libquery_engine-darwin-arm64.dylib.node")
+path.join(process.cwd(), "../generated/prisma/libquery_engine-darwin-arm64.dylib.node")
 // file annotations for bundling tools to include these files
 path.join(__dirname, "schema.prisma");
-path.join(process.cwd(), "generated/prisma/schema.prisma")
+path.join(process.cwd(), "../generated/prisma/schema.prisma")
