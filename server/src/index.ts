@@ -7,6 +7,7 @@ import morgan from "morgan";
 
 /* IMPORT ROUTES */
 import dashboardRoutes from "./routes/dashboardRoutes";
+import productRoutes from "./routes/productRoutes";
 
 /* CONFIGURATION */
 dotenv.config(); // this will setup our env setup so it would work
@@ -20,7 +21,8 @@ app.use(bodyParser.urlencoded({ extended: false })); // parses incoming requests
 app.use(cors()); // allows cross-origin requests
 
 /* ROUTES */
-app.use("/dashboard", dashboardRoutes);
+app.use("/dashboard", dashboardRoutes); // http://localhost:8000/dashboard
+app.use("/products", productRoutes); // http://localhost:8000/products
 
 /* SERVER */
 const port = process.env.PORT || 3001;
