@@ -43,6 +43,7 @@ export const getProducts = async (
   }
 };
 
+/* POST */
 export const createProduct = async (
   req: Request,
   res: Response
