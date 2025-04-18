@@ -1,3 +1,5 @@
+'use client";';
+
 import { useGetDashboardMetricsQuery } from "@/lib/state/api";
 import { ShoppingBag } from "lucide-react";
 import Rating from "@/(components)/Rating/Rating";

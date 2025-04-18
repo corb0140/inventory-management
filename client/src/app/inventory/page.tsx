@@ -60,6 +60,10 @@ const Inventory = () => {
         columns={columns}
         getRowId={(row) => row.productId}
         checkboxSelection
+        sx={{
+          "& .MuiCheckbox-root": { color: "#0088FE" },
+          "& .MuiDataGrid-columnHeaders": { color: "#0088FE" },
+        }}
         className="bg-white shadow rounded-lg border border-gray-200 mt-5 !text-gray-700"
       />
     </div>

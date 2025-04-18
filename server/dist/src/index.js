@@ -12,6 +12,7 @@ const morgan_1 = __importDefault(require("morgan"));
 /* IMPORT ROUTES */
 const dashboardRoutes_1 = __importDefault(require("./routes/dashboardRoutes"));
 const productRoutes_1 = __importDefault(require("./routes/productRoutes"));
+const userRoutes_1 = __importDefault(require("./routes/userRoutes"));
 /* CONFIGURATION */
 dotenv_1.default.config(); // this will setup our env setup so it would work
 const app = (0, express_1.default)(); // create express app
@@ -25,6 +26,7 @@ app.use((0, cors_1.default)()); // allows cross-origin requests
 /* ROUTES */
 app.use("/dashboard", dashboardRoutes_1.default); // http://localhost:8000/dashboard
 app.use("/products", productRoutes_1.default); // http://localhost:8000/products
+app.use("/users", userRoutes_1.default); // http://localhost:8000/users
 /* SERVER */
 const port = process.env.PORT || 3001;
 app.listen(port, () => console.log(`Server is running on port ${port}`));

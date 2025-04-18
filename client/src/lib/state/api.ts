@@ -15,6 +15,12 @@ export interface NewProduct {
   stockQuantity: number;
 }
 
+export interface Users {
+  userId: string;
+  name: string;
+  email: string;
+}
+
 export interface SalesSummary {
   salesSummaryId: string;
   totalValue: number;
@@ -53,7 +59,7 @@ export interface DashboardMetrics {
 export const api = createApi({
   baseQuery: fetchBaseQuery({ baseUrl: process.env.NEXT_PUBLIC_API_BASE_URL }),
   reducerPath: "api",
-  tagTypes: ["DashboardMetrics", "Products"], // a tag for cache invalidation
+  tagTypes: ["DashboardMetrics", "Products", "Users"], // a tag for cache invalidation
   endpoints: (build) => ({
     getDashboardMetrics: build.query<DashboardMetrics, void>({
       query: () => "/dashboard",
@@ -76,6 +82,10 @@ export const api = createApi({
       }),
       invalidatesTags: ["Products"], // for cache invalidation
     }),
+    getUsers: build.query<Users[], void>({
+      query: () => "/users",
+      providesTags: ["Users"], // for cache invalidation
+    }),
   }),
 });
 
@@ -83,4 +93,5 @@ export const {
   useGetDashboardMetricsQuery,
   useGetProductsQuery,
   useCreateProductMutation,
+  useGetUsersQuery,
 } = api;

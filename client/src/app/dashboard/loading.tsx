@@ -1,4 +1,5 @@
-import React from "react";
+"use client";
+
 import Loading from "@/Loading.json";
 import Lottie from "lottie-react";
 

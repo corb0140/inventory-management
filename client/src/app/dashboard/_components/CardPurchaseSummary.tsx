@@ -1,3 +1,5 @@
+"use client";
+
 import { useGetDashboardMetricsQuery } from "@/lib/state/api";
 import Loading from "@/Loading.json";
 import Lottie from "lottie-react";
