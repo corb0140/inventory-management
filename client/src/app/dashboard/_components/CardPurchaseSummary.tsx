@@ -1,5 +1,4 @@
 import { useGetDashboardMetricsQuery } from "@/lib/state/api";
-import React from "react";
 import Loading from "@/Loading.json";
 import Lottie from "lottie-react";
 import numeral from "numeral";

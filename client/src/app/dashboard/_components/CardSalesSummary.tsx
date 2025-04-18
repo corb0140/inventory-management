@@ -1,3 +1,5 @@
+"use client";
+
 import { useGetDashboardMetricsQuery } from "@/lib/state/api";
 import { TrendingUp } from "lucide-react";
 import React, { useState } from "react";

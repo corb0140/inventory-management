@@ -1,7 +1,6 @@
 import { useGetDashboardMetricsQuery } from "@/lib/state/api";
 import { ShoppingBag } from "lucide-react";
-import React from "react";
-import Rating from "./Rating";
+import Rating from "@/(components)/Rating/Rating";
 import Loading from "@/Loading.json";
 import Lottie from "lottie-react";
 
