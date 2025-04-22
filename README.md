@@ -140,7 +140,6 @@ pm2 start ecosystem.config.js
 **Mark Corbin**
 
 [![GitHub](https://img.shields.io/badge/GitHub-Profile-blue?style=flat&logo=github)](https://github.com/corb0140)
-[![Portfolio](https://img.shields.io/badge/Portfolio-Website-brightgreen?style=flat&logo=react)](https://portfolio-ruby-nine-59.vercel.app/)
 
 ---
 
