@@ -1,4 +1,4 @@
-# 📊 Inventory Management System
+# 🏭 Inventory Management
 
 ![Status](https://img.shields.io/badge/status-active-success.svg)
 ![Version](https://img.shields.io/badge/version-1.0.0-blue.svg)
@@ -11,12 +11,9 @@
 - [Overview](#overview)
 - [Tech Stack](#tech-stack)
 - [Features](#features)
-- [Architecture](#architecture)
 - [Installation](#installation)
 - [Environment Variables](#environment-variables)
 - [Running the Application](#running-the-application)
-- [Project Structure](#project-structure)
-- [API Documentation](#api-documentation)
 - [Deployment](#deployment)
 - [Author](#author)
 
@@ -26,51 +23,37 @@ This inventory management system provides businesses with a comprehensive soluti
 
 ## 🛠️ Tech Stack
 
-### Frontend
+### 🎨 Frontend
 
-- **Next.js** - React framework for server-side rendering and static site generation
-- **TailwindCSS** - Utility-first CSS framework
-- **Recharts** - Composable charting library built on React components
-- **Material UI** - React component library implementing Material Design
+- **⚛️ Next.js** - React framework for server-side rendering and static site generation
+- **🎭 TailwindCSS** - Utility-first CSS framework
+- **📊 Recharts** - Composable charting library built on React components
+- **🧩 Material UI** - React component library implementing Material Design
 
-### Backend
+### 🔧 Backend
 
-- **Node.js** - JavaScript runtime environment
-- **Express.js** - Web application framework for Node.js
-- **Prisma** - Next-generation ORM for Node.js and TypeScript
-- **PostgreSQL** - Advanced open-source relational database
+- **🟢 Node.js** - JavaScript runtime environment
+- **🚂 Express.js** - Web application framework for Node.js
+- **🔼 Prisma** - Next-generation ORM for Node.js and TypeScript
+- **🐘 PostgreSQL** - Advanced open-source relational database
 
-### DevOps & Infrastructure
+### ☁️ DevOps & Infrastructure
 
-- **AWS Ecosystem:**
-  - **RDS** - Managed relational database service
-  - **EC2** - Virtual servers in the cloud
-  - **VPC** - Isolated cloud resources
-- **PM2** - Production process manager for Node.js applications
+- **🌐 AWS Ecosystem:**
+  - **💾 RDS** - Managed relational database service
+  - **🖥️ EC2** - Virtual servers in the cloud
+  - **🔒 VPC** - Isolated cloud resources
+- **🔄 PM2** - Production process manager for Node.js applications
 
 ## ✨ Features
 
-- **User-friendly Dashboard** - Visual representation of inventory metrics
-- **Real-time Inventory Tracking** - Monitor stock levels as changes occur
-- **Product Management** - Add, edit, and remove products from inventory
-- **Reporting & Analytics** - Generate insights with customizable reports
-- **Supplier Management** - Keep track of supplier information and performance
+- **📱 User-friendly Dashboard** - Visual representation of inventory metrics
+- **⏱️ Real-time Inventory Tracking** - Monitor stock levels as changes occur
+- **📦 Product Management** - Add, edit, and remove products from inventory
+- **📈 Reporting & Analytics** - Generate insights with customizable reports
+- **👥 Supplier Management** - Keep track of supplier information and performance
 
-## 🏗️ Architecture
-
-```
-┌─────────────────┐     ┌─────────────────┐     ┌─────────────────┐
-│    Client       │     │    Server       │     │    Database     │
-│    (Next.js)    │◄────┤    (Express)    │◄────┤  (PostgreSQL)   │
-└─────────────────┘     └─────────────────┘     └─────────────────┘
-        ▲                       ▲                        ▲
-        │                       │                        │
-┌───────┴───────────┐   ┌──────┴──────────┐      ┌──────┴──────────┐
-│ Tailwind / MUI    │   │ Node.js / PM2   │      │ AWS RDS         │
-└───────────────────┘   └─────────────────┘      └─────────────────┘
-```
-
-## 🚀 Installation
+## 📥 Installation
 
 1. Clone the repository
 
@@ -120,7 +103,7 @@ AWS_REGION=
 
 ## ▶️ Running the Application
 
-### Development Mode
+### 💻 Development Mode
 
 ```bash
 # Run backend server
@@ -156,8 +139,8 @@ pm2 start ecosystem.config.js
 
 **Mark Corbin**
 
-[![GitHub](https://img.shields.io/badge/GitHub-Profile-blue?style=flat&logo=github)](https://github.com/markcorbin)
-[![Portfolio](https://img.shields.io/badge/Portfolio-Website-brightgreen?style=flat&logo=react)](https://markcorbin.com)
+[![GitHub](https://img.shields.io/badge/GitHub-Profile-blue?style=flat&logo=github)](https://github.com/corb0140)
+[![Portfolio](https://img.shields.io/badge/Portfolio-Website-brightgreen?style=flat&logo=react)](https://portfolio-ruby-nine-59.vercel.app/)
 
 ---
 
