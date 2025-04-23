@@ -36,19 +36,19 @@ const Sidebar = () => {
         className={`flex gap-3 justify-between md:justify-normal items-center pt-8
           ${isSidebarCollapsed ? "px-5" : "px-8"}`}
       >
-        <div>Logo</div>
+        <Image
+          src="https://s3-inventory-management-bucket1.s3.ca-central-1.amazonaws.com/logo.png"
+          alt="Logo"
+          width={27}
+          height={27}
+          className="rounded-full w-8"
+        />
         <h1
           className={`font-extrabold text-2xl uppercase ${
             isSidebarCollapsed ? "hidden" : "block"
           }`}
         >
-          <Image
-            src="https://s3-inventory-management-bucket1.s3.ca-central-1.amazonaws.com/logo.png"
-            alt="Logo"
-            width={27}
-            height={27}
-            className="rounded-full w-8"
-          />
+          footywear
         </h1>
 
         <button
