@@ -43,6 +43,8 @@ This inventory management system provides businesses with a comprehensive soluti
   - **💾 RDS** - Managed relational database service
   - **🖥️ EC2** - Virtual servers in the cloud
   - **🔒 VPC** - Isolated cloud resources
+  - **🔌 API** Gateway - Create, publish, and manage APIs at any scale
+  - **⚡ Amplify** - Platform to build and deploy full-stack applications
 - **🔄 PM2** - Production process manager for Node.js applications
 
 ## ✨ Features
