@@ -5,14 +5,13 @@
  * PM2 is a production process manager for Node.js applications with a built-in load balancer.
  * It allows you to keep your applications alive forever, reload them without downtime, and facilitate common system admin tasks.
  */
-module.export = {
-  apps: {
-    name: "inventory-management",
-    script: "npm",
-    args: "run dev",
-    env: {
-      NODE_ENV: "development",
-      ENV_VAR1: "environment-variable",
+module.exports = {
+  apps: [
+    {
+      name: "inventory-management",
+      script: "npm",
+      args: "run dev",
+      env: { NODE_ENV: "development", ENV_VAR1: "environment-variable" },
     },
-  },
+  ],
 };
