@@ -5,6 +5,7 @@ import { ShoppingBag } from "lucide-react";
 import Rating from "@/(components)/Rating/Rating";
 import Loading from "@/Loading.json";
 import Lottie from "lottie-react";
+import Image from "next/image";
 
 const CardPopularProducts = () => {
   const { data: dashboardMetrics, isLoading } = useGetDashboardMetricsQuery();
@@ -29,7 +30,15 @@ const CardPopularProducts = () => {
               >
                 {/* LEFT SIDE */}
                 <div className="flex items-center gap-3">
-                  <div>img</div>
+                  <Image
+                    src={`https://s3-inventory-management-bucket1.s3.ca-central-1.amazonaws.com/product${
+                      Math.floor(Math.random() * 3) + 1
+                    }.png`}
+                    alt={product.name}
+                    width={48}
+                    height={48}
+                    className="rounded-lg h-14 w-14"
+                  />
                   <div className="flex flex-col justify-between gap-1">
                     <div className="font-bold text-gray-700">
                       {product.name}

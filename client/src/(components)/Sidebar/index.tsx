@@ -12,6 +12,7 @@ import {
   User,
 } from "lucide-react";
 import React from "react";
+import Image from "next/image";
 import { SidebarLink } from "./sidebar-link";
 
 const Sidebar = () => {
@@ -41,7 +42,13 @@ const Sidebar = () => {
             isSidebarCollapsed ? "hidden" : "block"
           }`}
         >
-          footywear
+          <Image
+            src="https://s3-inventory-management-bucket1.s3.ca-central-1.amazonaws.com/logo.png"
+            alt="Logo"
+            width={27}
+            height={27}
+            className="rounded-full w-8"
+          />
         </h1>
 
         <button
