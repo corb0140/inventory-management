@@ -45,6 +45,7 @@ This inventory management system provides businesses with a comprehensive soluti
   - **🔒 VPC** - Isolated cloud resources
   - **🔌 API** Gateway - Create, publish, and manage APIs at any scale
   - **⚡ Amplify** - Platform to build and deploy full-stack applications
+  - **📦 S3** - Object storage service
 - **🔄 PM2** - Production process manager for Node.js applications
 
 ## ✨ Features
