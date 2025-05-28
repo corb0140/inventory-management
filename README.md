@@ -14,7 +14,6 @@
 - [Installation](#installation)
 - [Environment Variables](#environment-variables)
 - [Running the Application](#running-the-application)
-- [Deployment](#deployment)
 - [Author](#author)
 
 ## 🔍 Overview
@@ -36,17 +35,6 @@ This inventory management system provides businesses with a comprehensive soluti
 - **🚂 Express.js** - Web application framework for Node.js
 - **🔼 Prisma** - Next-generation ORM for Node.js and TypeScript
 - **🐘 PostgreSQL** - Advanced open-source relational database
-
-### ☁️ DevOps & Infrastructure
-
-- **🌐 AWS Ecosystem:**
-  - **💾 RDS** - Managed relational database service
-  - **🖥️ EC2** - Virtual servers in the cloud
-  - **🔒 VPC** - Isolated cloud resources
-  - **🔌 API** Gateway - Create, publish, and manage APIs at any scale
-  - **⚡ Amplify** - Platform to build and deploy full-stack applications
-  - **📦 S3** - Object storage service
-- **🔄 PM2** - Production process manager for Node.js applications
 
 ## ✨ Features
 
@@ -98,10 +86,7 @@ Create a `.env` file in the root directory with the following variables:
 PORT=
 
 # Database Configuration
-DATABASE_URL="postgresql://username:password@localhost:5432/inventory_db"
-
-# AWS Configuration (if applicable)
-AWS_REGION=
+DATABASE_URL=
 ```
 
 ## ▶️ Running the Application
@@ -114,28 +99,6 @@ npm run dev
 
 # Run frontend in a separate terminal
 npm run dev
-```
-
-## 🌐 Deployment
-
-This application is configured for deployment on AWS:
-
-1. Set up a PostgreSQL database on AWS RDS
-2. Deploy the Node.js backend on EC2 instances
-3. Configure the VPC for security and proper networking
-4. Use PM2 to manage the Node.js processes
-
-Detailed deployment instructions:
-
-```bash
-# Set up database migrations on production
-npx prisma migrate deploy
-
-# Build Next.js application
-npm run build
-
-# Start the application with PM2
-pm2 start ecosystem.config.js
 ```
 
 ## 👨‍💻 Author
