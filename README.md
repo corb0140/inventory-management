@@ -39,7 +39,6 @@ This inventory management system provides businesses with a comprehensive soluti
 ## ✨ Features
 
 - **📱 User-friendly Dashboard** - Visual representation of inventory metrics
-- **⏱️ Real-time Inventory Tracking** - Monitor stock levels as changes occur
 - **📦 Product Management** - Add, edit, and remove products from inventory
 - **📈 Reporting & Analytics** - Generate insights with customizable reports
 - **👥 Supplier Management** - Keep track of supplier information and performance
